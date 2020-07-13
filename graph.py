@@ -12,16 +12,17 @@ def get_seconds():
     seconds = []
     for i, e in enumerate(line):
         if i < 6: continue
-        sec_str = e[8:].replace(' |\n', '')
+        sec_str = e[-6:].replace(' |\n', '')
         seconds.append(int(sec_str))
     
     return seconds
 
 if __name__ == "__main__":
-    # x = list(range(1, 10))
-    # y = [randint(1, 10) for _ in x]
     y = get_seconds()
     x = list(range(1, len(y) + 1))
     plt.figure(0)
-    plt.plot(x, y)
+    plt.title('My Work Out Memo')
+    plt.xlabel('Times')
+    plt.ylabel('Seconds')
+    plt.plot(x, y, color='blue', linestyle='solid', linewidth = 1.0, marker='o')
     plt.show()

@@ -9,11 +9,12 @@ def get_seconds():
     seconds = []
     for i, e in enumerate(line):
         if i < 6: continue
-        sec_str = e[8:].replace(' |\n', '')
+        # sec_str = e[8:].replace(' |\n', '')
+        sec_str = e[-6:].replace(' |\n', '') # 後ろからにした方がよさそう
         seconds.append(int(sec_str))
     
     return seconds
 
 if __name__ == "__main__":
     seconds = get_seconds()
-    # print(seconds)
+    print(seconds)
