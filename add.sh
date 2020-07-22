@@ -5,3 +5,5 @@
 newline="|   $1/$2   |   $3   |"
 
 echo ${newline} >> sally_up_challenge.md
+
+python graph.py
